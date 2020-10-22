@@ -2,7 +2,7 @@ package SubClassExamples;
 
 import java.util.TreeMap;
 
-public class Student extends Person{
+public class Student extends Person implements UnderGrad, Comparable<Student>{
     private TreeMap<String, Integer> courses; //this should be a collection of course name and grades
     private int studentNum;
 
@@ -43,5 +43,20 @@ public class Student extends Person{
     @Override
     public boolean needsCoffee() {
         return true;
+    }
+
+    @Override
+    public String getTranscript() {
+        return "I took Jaret's courses, everything is now 100%";
+    }
+
+    @Override
+    public int compareTo(Student otherStudent) {
+        return this.studentNum - otherStudent.studentNum;
+    }
+
+    public String toString()
+    {
+        return String.format("%d %s %s", studentNum, getFirstName(), getLastName());
     }
 }

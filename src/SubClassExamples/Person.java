@@ -1,7 +1,7 @@
 package SubClassExamples;
 
 public abstract class Person {
-    private String firstName, lastName, phoneNumber;
+   private String firstName, lastName, phoneNumber;
 
     public Person(String firstName, String lastName, String phoneNumber) {
         setFirstName(firstName);
